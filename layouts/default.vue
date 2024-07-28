@@ -1,21 +1,24 @@
 <template>
-    <div class="main-wrapper">
-        <Header/>
-        <div>
-            <slot />
-        </div>
-        <Footer/>
+  <div class="main-wrapper">
+    <Header />
+    <CompanyCard />
+    <div>
+      <slot />
     </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
 import Footer from "~/components/footer/Footer.vue";
 import Header from "~/components/header/Header.vue";
+import CompanyCard from "~/components/company/CompanyCard.vue";
 
 export default {
   components: {
     Footer,
-    Header
+    Header,
+    CompanyCard,
   },
 };
 </script>

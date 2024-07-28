@@ -1,3 +1,3 @@
 <template>
-  <div>offers</div>
+  <div>Agents</div>
 </template>
