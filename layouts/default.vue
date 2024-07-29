@@ -2,7 +2,8 @@
   <div class="main-wrapper">
     <Header />
     <CompanyCard />
-    <div>
+    <div class="content-divider"></div>
+    <div class="main-content">
       <slot />
     </div>
     <Footer />
@@ -35,5 +36,16 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+.content-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  margin: 32px 0px 24px;
+}
+
+.main-content {
+  flex: 1;
 }
 </style>
