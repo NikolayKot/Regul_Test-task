@@ -6,7 +6,7 @@ export default defineEventHandler((event) => {
     logo: "/company-logo.png",
     name: "Наследие",
     rating: 4.7,
-    agentsCount: 5,
+    agentsCount: 6,
     reviews: 19,
     phoneNumber: "+1 234 567 8900",
     documentsVerified: true,
