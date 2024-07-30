@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Модальное окно -->
     <div v-if="selectedAgent" class="agents__modal">
       <div class="agents__modal-content">

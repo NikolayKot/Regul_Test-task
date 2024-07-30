@@ -8,6 +8,11 @@ interface CompanyState {
   reviews: number;
   phoneNumber: string;
   documentsVerified: boolean;
+  description: string;
+  address: string;
+  workingHours: {
+    [key: string]: string;
+  };
 }
 
 export const useCompanyStore = defineStore("company", {
@@ -19,19 +24,16 @@ export const useCompanyStore = defineStore("company", {
     reviews: 0,
     phoneNumber: "",
     documentsVerified: false,
+    description: "",
+    address: "",
+    workingHours: {},
   }),
   actions: {
     async fetchCompanyData() {
       try {
         const response = await fetch("/api/company");
         const data = await response.json();
-        this.logo = data.logo;
-        this.name = data.name;
-        this.rating = data.rating;
-        this.phoneNumber = data.phoneNumber;
-        this.reviews = data.reviews;
-        this.agentsCount = data.agentsCount;
-        this.documentsVerified = data.documentsVerified;
+        Object.assign(this, data);
       } catch (error) {
         console.error("Error fetching company data:", error);
       }
