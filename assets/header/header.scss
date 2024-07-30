@@ -71,4 +71,34 @@
     width: 1px;
     background-color: #cccccc;
   }
+
+  @media (max-width: 950px) {
+    &__container {
+      padding: 8px 16px;
+    }
+
+    &__logo-container {
+      flex: 1;
+    }
+
+    &__category-button,
+    &__location-container,
+    &__divider,
+    &__offers-link {
+      display: none;
+    }
+
+    &__info-container {
+      justify-content: flex-end;
+    }
+
+    &__info-button {
+      background: transparent;
+      padding: 0;
+    }
+
+    &__icon {
+      margin-right: 8px;
+    }
+  }
 }

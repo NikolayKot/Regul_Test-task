@@ -52,12 +52,12 @@
               >
                 <VerifiedIcon />
                 <div class="agents__reviews">Документы проверены</div>
-                <div class="agents__dot"></div>
+                <div class="agents__dot agents__dot-modal"></div>
               </div>
               <div v-if="selectedAgent.rating > 0" class="agents__rating">
                 <StarIcon />
                 <div class="agents__reviews">{{ selectedAgent.rating }}</div>
-                <div class="agents__dot"></div>
+                <div class="agents__dot agents__dot-modal"></div>
               </div>
               <div v-if="selectedAgent.reviews > 0" class="agents__reviews">
                 {{ selectedAgent.reviews }} отзывов
