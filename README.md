@@ -20,7 +20,7 @@
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/ваш-username/store-project.git
+git clone https://github.com/NikolayKot/Regul_Test-task.git
 cd store-project
 
 # Установка зависимостей
