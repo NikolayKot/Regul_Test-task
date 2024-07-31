@@ -19,7 +19,7 @@
         <button class="header__info-button" @click="toggleMenu">
           <BurgerIcon class="header__icon" />
           <img
-            src="/assets/images/header/avatar-placeholder.png"
+            src="~/assets/images/header/avatar-placeholder.png"
             alt="User avatar"
             class="header__user-avatar"
           />
