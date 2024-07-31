@@ -1,5 +1,5 @@
 <template>
-  <div class="offers">
+  <div v-if="authStore.isAuthenticated" class="offers">
     <div class="offers__dropdown-container">
       <div class="offers__dropdown">
         <button @click="toggleDropdown" class="offers__dropdown-button">
@@ -84,14 +84,20 @@
       </div>
     </div>
   </div>
+  <div v-else class="offers__unauthorized">
+    <p>Для просмотра объявлений необходимо авторизоваться.</p>
+    <NuxtLink to="/login" class="offers__login-link">Войти</NuxtLink>
+  </div>
 </template>
 
 <script>
+import { defineComponent } from "vue";
+import { useAuthStore } from "~/stores/auth";
+import { useOffersStore } from "~/stores/offers";
 import DateIcon from "~/assets/images/offers/Date.vue";
 import ViewsIcon from "~/assets/images/offers/Views.vue";
-import { useOffersStore } from "~/stores/offers";
 
-export default {
+export default defineComponent({
   components: {
     DateIcon,
     ViewsIcon,
@@ -121,6 +127,14 @@ export default {
       ],
     };
   },
+  computed: {
+    authStore() {
+      return useAuthStore();
+    },
+    offersStore() {
+      return useOffersStore();
+    },
+  },
   methods: {
     toggleDropdown() {
       this.isDropdownOpen = !this.isDropdownOpen;
@@ -141,9 +155,8 @@ export default {
       offer.promoting = false;
     },
     async fetchOffers() {
-      const offersStore = useOffersStore();
-      await offersStore.fetchOffers();
-      this.offers = offersStore.offers.map((offer) => ({
+      await this.offersStore.fetchOffers();
+      this.offers = this.offersStore.offers.map((offer) => ({
         ...offer,
         promoting: false,
         hidden: false,
@@ -153,7 +166,7 @@ export default {
   mounted() {
     this.fetchOffers();
   },
-};
+});
 </script>
 
 <style scoped lang="scss">
