@@ -1,75 +1,51 @@
-# Nuxt 3 Minimal Starter
+# Store Project
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Это проект интернет-магазина, разработанный с использованием Nuxt 3.
 
-## Setup
+## Технологии
 
-Make sure to install the dependencies:
+- Nuxt 3
+- Vue 3
+- Pinia
+- Sass
+
+## Требования
+
+- Node.js (рекомендуется версия 18.12.1 или выше)
+- npm (версия 8.19.2 или выше)
+
+## Установка
+
+Убедитесь, что у вас установлены Node.js и npm. Затем выполните следующие команды:
 
 ```bash
-# npm
+# Клонирование репозитория
+git clone https://github.com/ваш-username/store-project.git
+cd store-project
+
+# Установка зависимостей
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Установка
 
-Start the development server on `http://localhost:3000`:
+Для запуска проекта в режиме разработки выполните:
 
-```bash
-# npm
-npm run dev
+- npm run dev
 
-# pnpm
-pnpm run dev
+## Сборка для продакшена
 
-# yarn
-yarn dev
+- npm run build
 
-# bun
-bun run dev
-```
+## Структура проекта
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- `assets/`: Содержит нескомпилированные ассеты, такие как стили SASS
+- `components/`: Vue компоненты проекта
+- `layouts/`: Шаблоны макетов приложения
+- `pages/`: Маршруты и страницы приложения
+- `middleware/`: Промежуточное ПО (middleware) для обработки запросов перед рендерингом
+- `server/`: Серверные маршруты, API и другая серверная логика
+- `plugins/`: Плагины Vue.js
+- `public/`: Статические файлы
+- `store/`: Хранилище Pinia
+- `nuxt.config.ts`: Конфигурационный файл Nuxt
